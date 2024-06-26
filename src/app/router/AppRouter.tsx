@@ -6,11 +6,16 @@ import {
 } from 'react-router-dom';
 import { FC } from 'react';
 import { ErrorBoundary } from './ErrorBoundary.tsx';
+import { CodeWarsModule } from '../CodeWarsModule/CodeWarsModule.tsx';
+import { AppPage } from '../AppPage/AppPage.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<ErrorBoundary />}>
-      <Route path={'/pew'} element={'qwerty'} />
+      <Route element={<AppPage />}>
+        <Route path={'/'} element={''} />
+        <Route path={'/codewars'} element={<CodeWarsModule />} />
+      </Route>
     </Route>
   )
 );
