@@ -15,7 +15,7 @@ export const CustomAppBar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" component="div">
-            Photos
+            Pew pew
           </Typography>
         </Toolbar>
       </AppBar>

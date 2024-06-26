@@ -3,6 +3,7 @@ import { cn } from '@bem-react/classname';
 import { CircularProgressCentered } from '../loaders/CircularProgressCentered/CircularProgressCentered.tsx';
 import { Outlet } from 'react-router-dom';
 import { CustomAppBar } from '../AppBar/CustomAppBar.tsx';
+import './AppPage.scss';
 
 const cnAppPage = cn('AppPage');
 
