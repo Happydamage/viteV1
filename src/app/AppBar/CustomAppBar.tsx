@@ -14,6 +14,7 @@ export const CustomAppBar: FC<CustomAppBarProps> = (props) => {
     <Box
       className={cnCustomAppBar(undefined, [props.className])}
       sx={{ flexGrow: 1 }}
+      marginBottom={1}
     >
       <AppBar position="static">
         <Toolbar variant="dense">
