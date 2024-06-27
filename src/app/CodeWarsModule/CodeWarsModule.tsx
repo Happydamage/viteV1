@@ -4,9 +4,13 @@ import { CodeWarsList } from './CodeWarsList.tsx';
 
 const cnCodeWarsModule = cn('CodeWarsModule');
 
-export const CodeWarsModule: FC = () => {
+interface CodeWarsModuleProps {
+  className?: string;
+}
+
+export const CodeWarsModule: FC<CodeWarsModuleProps> = (props) => {
   return (
-    <div className={cnCodeWarsModule()}>
+    <div className={cnCodeWarsModule(undefined, [props.className])}>
       <CodeWarsList />
     </div>
   );

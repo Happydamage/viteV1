@@ -3,6 +3,12 @@ import { cn } from '@bem-react/classname';
 
 const cnCodeWarsEditForm = cn('CodeWarsEditForm');
 
-export const CodeWarsEditForm: FC = () => {
-  return <div className={cnCodeWarsEditForm()}></div>;
+interface CodeWarsEditFormProps {
+  className?: string;
+}
+
+export const CodeWarsEditForm: FC<CodeWarsEditFormProps> = (props) => {
+  return (
+    <div className={cnCodeWarsEditForm(undefined, [props.className])}></div>
+  );
 };

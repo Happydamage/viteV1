@@ -1,9 +1,20 @@
+import { FC } from 'react';
+import { cn } from '@bem-react/classname';
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export const CustomAppBar = () => {
+const cnCustomAppBar = cn('CustomAppBar');
+
+interface CustomAppBarProps {
+  className?: string;
+}
+
+export const CustomAppBar: FC<CustomAppBarProps> = (props) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box
+      className={cnCustomAppBar(undefined, [props.className])}
+      sx={{ flexGrow: 1 }}
+    >
       <AppBar position="static">
         <Toolbar variant="dense">
           <IconButton
