@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { cn } from '@bem-react/classname';
 import './styles/CodeWarsItem.scss';
 import {
@@ -17,6 +17,8 @@ interface CodeWarsItemProps extends CodeWarsItemModel {
 }
 
 export const CodeWarsItem: FC<CodeWarsItemProps> = (props) => {
+  // const [data, setData] = useState('');
+
   return (
     <Card
       className={cnCodeWarsItem(undefined, [props.className])}
@@ -25,13 +27,12 @@ export const CodeWarsItem: FC<CodeWarsItemProps> = (props) => {
       <CardContent>
         <Typography
           gutterBottom
-          variant="h1"
+          variant="h5"
           component="div"
           textAlign={'center'}
           position={'absolute'}
-          left={'50%'}
           zIndex={0}
-          sx={{ opacity: 0.1, transform: 'translate(-50%)' }}
+          sx={{ opacity: 0.5, bottom: 0 }}
         >
           {props.id}
         </Typography>
