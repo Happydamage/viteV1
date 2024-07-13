@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { cn } from '@bem-react/classname';
 import './styles/CodeWarsItem.scss';
 import {
@@ -8,16 +8,23 @@ import {
   CardContent,
   Typography,
 } from '@mui/material';
-import { CodeWarsItemModel } from './models/CodeWarsModel.ts';
+import { CodeWarsModel } from './models/CodeWarsModel.ts';
+import { CodeWarsServices } from './services/CodeWarsServices.ts';
 
 const cnCodeWarsItem = cn('CodeWarsItem');
 
-interface CodeWarsItemProps extends CodeWarsItemModel {
+interface CodeWarsItemProps extends CodeWarsModel {
   className?: string;
 }
 
 export const CodeWarsItem: FC<CodeWarsItemProps> = (props) => {
-  // const [data, setData] = useState('');
+  const [data, setData] = useState<CodeWarsModel[]>([]);
+
+  useEffect(() => {
+    CodeWarsServices.list();
+  }, [setData]);
+
+  console.log(data);
 
   return (
     <Card

@@ -1,4 +1,4 @@
-export interface CodeWarsItemModel {
+export interface CodeWarsModel {
   id: number;
   task: string;
   result: string;
