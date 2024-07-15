@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { cn } from '@bem-react/classname';
 import './styles/CodeWarsItem.scss';
 import {
@@ -9,7 +9,6 @@ import {
   Typography,
 } from '@mui/material';
 import { CodeWarsModel } from './models/CodeWarsModel.ts';
-import { CodeWarsServices } from './services/CodeWarsServices.ts';
 
 const cnCodeWarsItem = cn('CodeWarsItem');
 
@@ -18,14 +17,6 @@ interface CodeWarsItemProps extends CodeWarsModel {
 }
 
 export const CodeWarsItem: FC<CodeWarsItemProps> = (props) => {
-  const [data, setData] = useState<CodeWarsModel[]>([]);
-
-  useEffect(() => {
-    CodeWarsServices.list();
-  }, [setData]);
-
-  console.log(data);
-
   return (
     <Card
       className={cnCodeWarsItem(undefined, [props.className])}
@@ -44,10 +35,10 @@ export const CodeWarsItem: FC<CodeWarsItemProps> = (props) => {
           {props.id}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {props.task}
+          {props.userId}
         </Typography>
         <Typography variant="body2" color="text.secondary" marginTop={1}>
-          {props.hashtag}
+          {props.title}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'center' }}>

@@ -1,6 +1,6 @@
 export interface CodeWarsModel {
+  userId: number;
   id: number;
-  task: string;
-  result: string;
-  hashtag: string;
+  title: string;
+  completed: boolean;
 }
