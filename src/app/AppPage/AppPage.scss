@@ -5,4 +5,16 @@
   padding: 8px;
   height: calc(100vh - 16px - 10px);
   border: 5px solid var(--mui-blue-1);
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: coral;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: bisque;
+    border-radius: 8px;
+  }
 }
