@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CodeWarsModel } from '../models/CodeWarsModel.ts';
+import { CodeWarsEditModel, CodeWarsModel } from '../models/CodeWarsModel.ts';
 
 export class CodeWarsServices {
   static list = async () => {
@@ -17,6 +17,16 @@ export class CodeWarsServices {
       return axios.post<CodeWarsModel>('http://localhost:3000/codewars', {
         taskData,
       });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  static edit = async (id: string) => {
+    try {
+      return axios.get<CodeWarsEditModel>(
+        `http://localhost:3000/codewars/${id}`
+      );
     } catch (error) {
       console.error(error);
     }

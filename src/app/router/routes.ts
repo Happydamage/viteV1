@@ -3,5 +3,6 @@ export const routes = {
 
   codeWars: {
     main: () => '/code-wars',
+    codeWarsById: (id: string) => `/code-wars/${id}`,
   },
 };

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { cn } from '@bem-react/classname';
 import './styles/CodeWarsItem.scss';
 import {
@@ -18,12 +18,21 @@ interface CodeWarsItemProps extends CodeWarsModel {
 }
 
 export const CodeWarsItem: FC<CodeWarsItemProps> = (props) => {
-  const create = async (): Promise<void> => {
-    await CodeWarsServices.create({
-      userId: 123,
-      title: '123',
-      completed: true,
-    });
+  const [data, setData] = useState<CodeWarsModel | null>(null);
+  // const create = async (): Promise<void> => {
+  //   await CodeWarsServices.create({
+  //     userId: 123,
+  //     title: '123',
+  //     completed: true,
+  //   });
+  // };
+
+  const getId = async (): Promise<void> => {
+    const resp = await CodeWarsServices.edit('1');
+
+    if (resp) {
+      setData(resp);
+    }
   };
 
   return (
@@ -48,8 +57,8 @@ export const CodeWarsItem: FC<CodeWarsItemProps> = (props) => {
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'end' }}>
-        <Button size="small" variant={'contained'} onClick={() => create()}>
-          Edit
+        <Button size="small" variant={'contained'} onClick={() => ''}>
+          test
         </Button>
         <Button size="small" variant={'outlined'}>
           Delete

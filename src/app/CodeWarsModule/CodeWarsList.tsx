@@ -33,7 +33,7 @@ export const CodeWarsList: FC<CodeWarsListProps> = (props) => {
       spacing={2}
     >
       {data.map((el, index) => (
-        <Grid xs={3}>
+        <Grid xs={3} key={index + 1}>
           <CodeWarsItem
             userId={index + 1}
             title={el.title}
