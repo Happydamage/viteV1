@@ -35,10 +35,12 @@ export const CodeWarsList: FC<CodeWarsListProps> = (props) => {
       {data.map((el, index) => (
         <Grid xs={3} key={index + 1}>
           <CodeWarsItem
+            id={el.id}
             userId={index + 1}
-            title={el.title}
-            completed={el.completed}
-          />
+            title={el.taskData.title}
+            completed={el.taskData.completed}
+            taskData={el.taskData}
+           />
         </Grid>
       ))}
     </Grid>
